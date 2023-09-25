@@ -1,4 +1,5 @@
-import "./globals.scss";
+import styles from "./mainPage.module.scss";
+
 export default function Home() {
-	return <main>Home</main>;
+	return <main className={styles.wrapper}>aaaaaa</main>;
 }

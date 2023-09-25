@@ -1,6 +1,9 @@
-import "./globals.scss";
+"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import cloudBG from "./../assets/cloud.jpeg";
+import "./globals.scss";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,10 +17,16 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const [bgImage, setBgImage] = useState(cloudBG);
+
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<main className={"sun"}>{children}</main>
+				<div
+					style={{
+						backgroundImage: `url(${bgImage.src})`,
+					}}></div>
+				{children}
 			</body>
 		</html>
 	);
